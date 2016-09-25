@@ -1,0 +1,28 @@
+#employee-stuff{
+    width: 100px;
+    font-family: Papyrus;
+}
+
+#employee-data{
+    font-size: 18px;
+    font-family: Futura;
+}
+#employee-results tr{
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    font-family: Futura;
+}
+
+#employee-results th{
+    font-size: 18px;
+    padding: 0 10px 0 10px;
+}
+#monthlyCost {
+    position: absolute;
+    top: 30px;
+    right: 500px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Comic Sans MS';
+}
