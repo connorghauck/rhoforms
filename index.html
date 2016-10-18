@@ -3,46 +3,77 @@
   <head>
       <meta charset="utf-8">
       <title>Week 1 Weekend Assignment</title>
-      <script src="jquery-3.1.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
       <script src="app.js"></script>
       <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-      <form id="employee-info">
-          <div id="employee-stuff">
-            <label for="employee-first-name">First Name:</label>
-            <input type="text" id="employee-first-name" name="employee-first-name" />
+        <main ng-app="basicApp">
+            <section ng-controller="BasicController as basic">
+                <form name="employeeForm">
+                    <div id="employee-stuff">
+                        <label for="employee-first-name">First Name:</label>
+                        <input type="text" id="employee-first-name" ng-model="basic.employee.firstName" />
 
-            <label for="employee-last-name">Last Name:</label>
-            <input type="text" id="employee-last-name" name="employee-last-name" />
+                        <label for="employee-last-name">Last Name:</label>
+                        <input type="text" id="employee-last-name" ng-model="basic.employee.lastName" />
 
-            <label for="employee-id">ID:</label>
-            <input type="text" id="employee-id" name="employee-id" />
+                        <label for="employee-id">ID:</label>
+                        <input type="number" id="employee-id" ng-model="basic.employee.id" />
 
-            <label for="employee-job">Job Title:</label>
-            <input type="text" id="employee-job" name="employee-job" />
+                        <label for="employee-job">Job Title:</label>
+                        <input type="text" id="employee-job" ng-model="basic.employee.job" />
 
-            <label for="employee-salary">Yearly Salary:</label>
-            <input type="number" id="employee-salary" name="employee-salary" />
-          </div>
+                        <label for="employee-salary">Yearly Salary:</label>
+                        <input type="number" id="employee-salary" ng-model="basic.employee.salary" />
+                    </div>
 
-            <button type="submit">Submit</button>
-      </form>
-        <div id="employee-data">
-            <h3>Employee List</h3>
-        </div>
-            <table id="employee-results">
+                    <button type="submit" ng-click="basic.createEmployee()">Submit</button>
+                </form>
+
+
+
+                <div id="employee-data">
+                    <h3>Employee List</h3>
+
+                <table>
+
+                    <thead>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Employee ID</th>
+                            <th>Job Title</th>
+                            <th>Salary</th>
+
+                    </thead>
+                    <tbody ng-repeat="employee in basic.employees">
+                            <td>{{employee.firstName}}</td>
+                            <td>{{employee.lastName}}</td>
+                            <td>{{employee.id}}</td>
+                            <td>{{employee.job}}</td>
+                            <td>{{employee.salary}}</td>
+                            <td><button class="btn" ng-click="basic.deleteEmployee($index)">Delete</button></td>
+
+
+                    </tbody>
+                </table>
+                </div>
+                <h3>Monthly Salary Expenditure</h3>
+                <p>${{basic.totalSalary}}</p>
+            </section>
+        </main>
+
+            <!-- <table id="employee-results">
                 <tr>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Employee ID</th>
                     <th>Job Title</th>
                     <th>Yearly Salary</th>
-            </table>
+                </tr>
+            </table> -->
 
-        <div id="monthlyCost">
-            <h3>Monthly Salary Expenditure</h3>
-        </div>
+
 
     </body>
 </html>

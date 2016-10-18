@@ -1,6 +1,6 @@
 #employee-stuff{
-    width: 100px;
-    font-family: Papyrus;
+    width: 120px;
+    font-family: Futura;
 }
 
 #employee-data{
@@ -21,8 +21,15 @@
 #monthlyCost {
     position: absolute;
     top: 30px;
-    right: 500px;
+    right: 600px;
     text-align: center;
     font-size: 20px;
-    font-family: 'Comic Sans MS';
+    font-family: Futura;
+}
+
+table, tr, th, td  {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
 }
