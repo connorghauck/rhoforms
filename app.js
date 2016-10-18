@@ -11,6 +11,9 @@ app.controller('BasicController', function(){
         console.log('Submitted employee ', self.employee);
         self.employees.push(angular.copy(self.employee));
         self.getSalary();
+
+        self.employee = {};
+        self.employeeForm.$setPristine();
     };
 
     self.getSalary = function(){
@@ -18,9 +21,9 @@ app.controller('BasicController', function(){
         self.employees.forEach(function (currentIndex){
             self.totalSalary += currentIndex.salary;
         }); //you're calling foreach on the employees array
-
         self.totalSalary /= 12;
         self.totalSalary = self.totalSalary.toFixed(2);
+
     }
 
     self.deleteEmployee = function($index){
